@@ -1,29 +1,38 @@
-<h1>Listing stacks</h1>
-
-<table>
+<%- model_class = Stack -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Stack %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Env type</th>
-      <th>Account</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:env_type) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @stacks.each do |stack| %>
       <tr>
+        <td><%= stack.id %></td>
         <td><%= stack.name %></td>
         <td><%= stack.env_type %></td>
-        <td><%= stack.account %></td>
-        <td><%= link_to 'Show', stack %></td>
-        <td><%= link_to 'Edit', edit_stack_path(stack) %></td>
-        <td><%= link_to 'Destroy', stack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l stack.created_at, format: :long %></td>
+        <td>
+          <%= link_to stack_path(stack), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to stack_path(stack), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Stack', new_stack_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_stack_path,
+            :class => 'btn btn-primary' %>
