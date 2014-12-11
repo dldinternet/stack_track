@@ -1,4 +1,5 @@
 ActiveAdmin.register Stack do
+  permit_params :name, :env_type
 
 
   # See permitted parameters documentation:
