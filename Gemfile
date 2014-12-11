@@ -40,29 +40,29 @@ gem 'spring',        group: :development
 
 gem 'bundler'
 
-group :development do
-  gem 'pry-rails'
-  gem 'better_errors'
-end
-
-gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
-gem 'bootstrap-sass-extras'
-gem 'rails_config'
-gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
-gem 'simple_form'
-gem 'delayed_job_active_record'
-gem 'binding_of_caller'
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'validates_formatting_of'
+gem 'tzinfo-data'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'tzinfo-data'
-gem 'validates_formatting_of'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'binding_of_caller'
+gem 'delayed_job_active_record'
+gem 'simple_form'
+gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
+gem 'rails_config'
+gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
+gem 'bootstrap-sass-extras'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'dotenv-rails'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'pry-rails'
 end
 
 group :test do
