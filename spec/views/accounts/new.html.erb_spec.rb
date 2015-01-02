@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "accounts/new", :type => :view do
   before(:each) do
     assign(:account, Account.new(
-      :id => "MyString",
+      :number => "MyString",
       :name => "MyString",
-      :url => "MyString"
+      :login_url => "MyString"
     ))
   end
 
@@ -14,11 +14,11 @@ RSpec.describe "accounts/new", :type => :view do
 
     assert_select "form[action=?][method=?]", accounts_path, "post" do
 
-      assert_select "input#account_id[name=?]", "account[id]"
+      assert_select "input#account_number[name=?]", "account[number]"
 
       assert_select "input#account_name[name=?]", "account[name]"
 
-      assert_select "input#account_url[name=?]", "account[url]"
+      assert_select "input#account_login_url[name=?]", "account[login_url]"
     end
   end
 end

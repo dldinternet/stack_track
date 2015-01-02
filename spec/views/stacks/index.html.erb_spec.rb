@@ -5,13 +5,15 @@ RSpec.describe "stacks/index", :type => :view do
     assign(:stacks, [
       Stack.create!(
         :name => "Name",
-        :env_type => "Env Type",
-        :account => nil
+        :environment_type => "Environment Type",
+        :account => nil,
+        :environment => "Environment"
       ),
       Stack.create!(
         :name => "Name",
-        :env_type => "Env Type",
-        :account => nil
+        :environment_type => "Environment Type",
+        :account => nil,
+        :environment => "Environment"
       )
     ])
   end
@@ -19,7 +21,8 @@ RSpec.describe "stacks/index", :type => :view do
   it "renders a list of stacks" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Env Type".to_s, :count => 2
+    assert_select "tr>td", :text => "Environment Type".to_s, :count => 2
     assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => "Environment".to_s, :count => 2
   end
 end

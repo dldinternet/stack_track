@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :account do
-    id "MyString"
+    number "MyString"
 name "MyString"
-url "MyString"
+login_url "MyString"
   end
 
 end

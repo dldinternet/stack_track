@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :stack do
     name "MyString"
-env_type "MyString"
+environment_type "MyString"
 account nil
+environment "MyString"
   end
 
 end

@@ -4,15 +4,17 @@ RSpec.describe "stacks/show", :type => :view do
   before(:each) do
     @stack = assign(:stack, Stack.create!(
       :name => "Name",
-      :env_type => "Env Type",
-      :account => nil
+      :environment_type => "Environment Type",
+      :account => nil,
+      :environment => "Environment"
     ))
   end
 
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Env Type/)
+    expect(rendered).to match(/Environment Type/)
     expect(rendered).to match(//)
+    expect(rendered).to match(/Environment/)
   end
 end

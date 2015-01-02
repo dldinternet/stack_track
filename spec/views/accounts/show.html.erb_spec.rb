@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe "accounts/show", :type => :view do
   before(:each) do
     @account = assign(:account, Account.create!(
-      :id => "Id",
+      :number => "Number",
       :name => "Name",
-      :url => "Url"
+      :login_url => "Login Url"
     ))
   end
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Id/)
+    expect(rendered).to match(/Number/)
     expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Url/)
+    expect(rendered).to match(/Login Url/)
   end
 end

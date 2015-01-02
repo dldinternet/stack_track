@@ -7,8 +7,10 @@
   <dl>
       <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
       <dd><pre class="prettyprint"><%= @stack.name %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:env_type) %></dt>
-      <dd><pre class="prettyprint"><%= @stack.env_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:environment_type) %></dt>
+      <dd><pre class="prettyprint"><%= @stack.environment_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:environment) %></dt>
+      <dd><pre class="prettyprint"><%= @stack.environment %></pre></dd>
   </dl>
 </div>
 

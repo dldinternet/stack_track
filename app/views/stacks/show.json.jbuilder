@@ -1,1 +1,1 @@
-json.extract! @stack, :id, :name, :env_type, :account_id, :created_at, :updated_at
+json.extract! @stack, :id, :name, :environment_type, :account_id, :environment, :created_at, :updated_at
